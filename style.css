@@ -1,0 +1,323 @@
+/* 1. VARIÁVEIS GERAIS */
+/* Por que usar root? Se você quiser mudar o tom de verde no futuro, muda só aqui e altera no site todo! */
+:root {
+  --bg-color: #0d1117; /* Fundo escuro inspirado no GitHub Dark */
+  --text-white: #ffffff;
+  --text-gray: #8b949e;
+  --neon-green: #2ea043; /* Verde estilo terminal/dev */
+}
+
+/* 2. RESET BÁSICO */
+/* Remove margens padrão do navegador para termos controle total */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 3. CONFIGURAÇÃO DO CORPO */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-white);
+  /* Essa imagem de fundo simula o espaço escuro do seu exemplo */
+  background-image: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
+  min-height: 100vh;
+}
+
+/* 4. SEÇÃO PRINCIPAL (HERO) */
+.hero-section {
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: var(--text-gray);
+  margin-bottom: 30px;
+}
+
+/* Aplica a cor verde na palavra "Front-end" */
+.highlight-green {
+  color: var(--neon-green);
+  font-weight: bold;
+}
+
+/* 5. EFEITO DO CURSOR PISCANDO */
+.cursor {
+  color: var(--neon-green);
+  animation: blink 1s infinite;
+}
+
+/* Regra da animação do cursor */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 6. BOTÃO DE CURRÍCULO */
+.btn-resume {
+  background-color: var(--neon-green);
+  color: var(--text-white);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.3s ease; /* Deixa a mudança de cor suave ao passar o mouse */
+}
+
+.btn-resume:hover {
+  background-color: #238636; /* Fica um pouco mais escuro ao passar o mouse */
+  box-shadow: 0 0 15px rgba(46, 160, 67, 0.4); /* Adiciona um brilho sutil */
+}
+/* 1. CONFIGURAÇÃO DA SEÇÃO */
+.about-section {
+  padding: 80px 10%;
+  background-color: transparent;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+/* 2. CONTAINER FLEXBOX */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; /* Espaço entre a foto e o texto */
+  flex-wrap: wrap; /* Para quebrar linha no celular automaticamente */
+}
+
+/* 3. ESTILO DA FOTO */
+.about-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%; /* Deixa a foto redonda */
+  border: 4px solid var(--neon-green); /* Borda verde neon do seu modelo */
+  box-shadow: 0 0 20px rgba(46, 160, 67, 0.3); /* Brilho sutil */
+  object-fit: cover;
+}
+
+/* 4. CONTEÚDO E CARDS */
+.about-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text {
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.skill-card {
+  background-color: #161b22; /* Fundo levemente mais claro que o geral */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateX(10px); /* Efeito de deslizar ao passar o mouse */
+  border-left: 4px solid var(--neon-green);
+}
+
+.skill-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-white);
+}
+
+.skill-card p {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+/* 1. SEÇÃO DE HABILIDADES */
+.skills-section {
+  padding: 60px 10%;
+}
+
+/* 2. A MÁGICA DO GRID */
+.skills-grid {
+  display: grid;
+  /* Cria colunas de no mínimo 250px. Se não couber, ele quebra a linha sozinho! */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* 3. ESTILO DO CARD DE TECNOLOGIA */
+.skill-card-tech {
+  background-color: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.skill-card-tech:hover {
+  border-color: var(--neon-green);
+  transform: translateY(-5px); /* Flutua levemente ao passar o mouse */
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.skill-level {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+}
+
+/* 4. INDICADOR DE NÍVEL (BOLINHAS) */
+.level-indicator {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #30363d; /* Cor cinza para nível não atingido */
+  border-radius: 50%;
+}
+
+.dot.active {
+  background-color: var(--neon-green); /* Verde para o nível que você já tem */
+  box-shadow: 0 0 8px var(--neon-green);
+}
+/* 1. SEÇÃO DE CONTATO */
+.contact-section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.contact-subtitle {
+  color: var(--text-gray);
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* 2. INFORMAÇÕES DE CONTATO */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h3 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.info-label {
+  font-weight: bold;
+  color: var(--neon-green);
+  font-size: 0.9rem;
+}
+
+/* 3. FORMULÁRIO */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  background-color: #161b22;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #30363d;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--neon-green);
+}
+
+.btn-send {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--neon-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-send:hover {
+  box-shadow: 0 0 15px var(--neon-green);
+}
+
+/* 4. RODAPÉ */
+.main-footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid #30363d;
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
