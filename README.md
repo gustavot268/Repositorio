@@ -35,7 +35,7 @@ Atualmente no 4º período de ADS na Estácio de Sá, venho aprimorando meu flux
 
 ---
 
-## 📊 Diferenciais Técnicos (ATS Friendly)
+## 📊 Diferenciais Técnicos
 
 * **Versionamento Profissional:** Domínio de Git/GitHub para colaboração e histórico de código.
 * **Maturidade de Ambiente:** Experiência em gerenciamento de pacotes (NPM) e sincronização de ambientes com GitHub Codespaces.
